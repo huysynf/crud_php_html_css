@@ -26,19 +26,19 @@
                 <form class="createForm" method="post" action="./store.php">
                     <div class="form-group">
                         <label for="">Họ tên</label>  
-                        <input class="form-control" type="text" name="name" /> 
+                        <input readonly class="form-control" type="text" name="name" />
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>  
-                        <input class="form-control" type="email" name="email" /> 
+                        <input readonly class="form-control" type="email" name="email" />
                     </div>
                     <div class="form-group">
                         <label for="">Địa chỉ</label>  
-                        <textarea class="form-control" name="address" > </textarea>
+                        <textarea readonly class="form-control" name="address" > </textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Sinh nhật</label>  
-                        <input class="form-control" type="date" name="birthday" /> 
+                        <input readonly class="form-control" type="date" name="birthday" />
                     </div>
                     <div class="form-group">
                         <label for="">Giới tính</label>  

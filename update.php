@@ -4,13 +4,15 @@ $request = $_POST;
 if (array_key_exists('update',$request))
 {
    $user = [
-       'id' =>$request['id'],
        'name' => isset($request['name']) ? $request['name'] : '',
        'email' => isset($request['email']) ? $request['email'] : '',
        'address' => isset($request['address']) ? $request['address'] : '',
-       'birthday' => isset($request['birthday']) ? $request['birthday'] : '',
-       'gender' => isset($request['gender']) ? $request['gender'] : 1
+       'birthday' => $request['birthday'] ? $request['birthday'] : '2022-12-11',
+       'gender' => isset($request['gender']) ? $request['gender'] : 1,
+        'id' =>$request['id']
+
    ];
    updateUser($user);
+   redirectHome();
 
 }

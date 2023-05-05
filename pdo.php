@@ -62,9 +62,9 @@ function createUser($data)
 
 function updateUser($dataUpdate)
 {
-        $sql = "UPDATE users SET name=:name, email=:email, address=:address, birthday=:birthday, gender=:gender WHERE id =:id";
-        $stmt = prepareSql($sql);
-        $stmt->execute($dataUpdate);
-    $results = $stmt->fetchAll();
+    $sql = "UPDATE users SET name =:name, email =:email, address =:address, birthday =:birthday, gender =:gender WHERE id =:id;";
+    $stmt = prepareSql($sql);
+    $stmt->execute($dataUpdate);
+
     return $stmt;
 }

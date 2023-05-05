@@ -42,15 +42,15 @@ if (!$id || !$user)
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>  
-                        <input class="form-control" type="email" name="email" value="<?=$user['email'] ?>" />
+                        <input class="form-control" required type="email" name="email" value="<?=$user['email'] ?>" />
                     </div>
                     <div class="form-group">
                         <label for="">Địa chỉ</label>  
-                        <textarea class="form-control" name="address" ><?=$user['address']?> </textarea>
+                        <textarea class="form-control" required name="address" ><?=$user['address']?> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Sinh nhật</label>  
-                        <input class="form-control" type="date" value="<?=$user['date'] ?>" name="birthday" />
+                        <input class="form-control" required type="date" value="<?=$user['date'] ?>" name="birthday" />
                     </div>
                     <div class="form-group">
                         <label for="">Giới tính</label>  
