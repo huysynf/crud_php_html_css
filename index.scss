@@ -1,0 +1,94 @@
+html,body{
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+.menu
+{
+    background-color: #aaaaaa;
+    padding: 20px;
+
+    li{
+        list-style: none;
+        a{
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+    }
+} 
+.add-btn{
+    text-decoration: none;
+    background-color: #aaaaaa60;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+}
+.container{
+    padding: 0 4%;
+}
+.content{
+    margin-top: 20px;
+}
+
+.btn-edit{
+    text-decoration: none;
+    background-color: #dd701760;
+    color: #000000;
+   
+    padding: 5px 20px;
+    border-radius: 5px;
+    
+}
+.btn-delete{
+    text-decoration: none;
+    background-color: red;
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 5px;
+    
+}
+table,
+tr,td,th{
+    border: 1px solid silver;
+    border-collapse: collapse;
+}
+td,th{
+    padding: 10px;
+}
+
+tr{
+    &:hover{
+        background-color: #aaaaaa50;
+    }
+}
+
+.btn-create{
+    text-decoration: none;
+    background-color: rgb(17, 10, 200);
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: none;
+}
+.form-group{
+    margin-bottom: 10px;
+    label{
+        display: block;
+    }
+
+    .form-control{
+        border:none;
+        display: block;
+        width: 500px;
+        padding: 10px;
+        border-bottom: 1px solid #000;
+        &:focus{
+            outline: none;
+            border-bottom: 1px solid blue;
+        }
+    }
+}
