@@ -1,3 +1,8 @@
+<?php
+require_once 'pdo.php';
+
+$users = selectUser();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,7 @@
 <div class="container">
     <h1>Danh sách người dùng</h1>
     <div>
-        <a class="add-btn" href="/create.php">Thêm mới</a>
+        <a class="add-btn" href="./create.php">Thêm mới</a>
     </div>
 
 
@@ -36,19 +41,31 @@
             </tr>
             </thead>
 
-            <tbody>
+            <? if(count($users) >0):
+                foreach ($users as $item):
+                ?>
+
             <tr>
-                <td>1</td>
-                <td>Huyhq</td>
-                <td>huyhq@gmail.com</td>
-                <td>Hà nội</td>
-                <td>20/20/1999</td>
-                <td>Nam</td>
+                <td><?= $item['id'] ?></td>
+                <td><?= $item['name'] ?></td>
+                <td><?= $item['email'] ?></td>
+                <td><?= $item['address'] ?></td>
+                <td><?= $item['birthday'] ?></td>
+                <td><?= $item['gender'] ? 'Nam' : 'Nữ' ?></td>
                 <td>
-                    <a class="btn-edit" href="/edit.php">Sửa</a>
-                    <a  class="btn-delete" href="/delete.php">Xoá</a>
+                    <form action="./delete.php" id="deleteForm" method="post">
+                        <input type="hidden" name="id" value="<?=$item['id'] ?>">
+                    </form>
+                    <a class="btn-edit" href="./edit.php?id=<?=$item['id'] ?>">Sửa</a>
+                    <button  class="btn-delete" form="deleteForm">Xoá</button>
+
                 </td>
             </tr>
+            <? endforeach; else: ?>
+                <tr>
+                    <td colspan="7"> Không có user nào</td>
+                </tr>
+            <?php endif; ?>
             </tbody>
         </table>
     </div>

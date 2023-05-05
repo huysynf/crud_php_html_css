@@ -1,3 +1,14 @@
+<?php
+require_once 'pdo.php';
+$id = $_GET['id'];
+$user = findUser($id);
+
+if (!$id || !$user)
+{
+    redirectHome();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,36 +28,37 @@
     <div class="container">
         <h1>Chỉnh sửa người dùng</h1>
         <div>
-            <a class="add-btn" href="/index.html">Danh sách</a>
+            <a class="add-btn" href="./index.php">Danh sách</a>
         </div>
 
 
 
             <div class="content">
-                <form class="createForm" method="post" action="">
+                <form class="createForm" method="post" action="./update.php">
+                    <input type="hidden" name="id" value="<?=$user['id'] ?>">
                     <div class="form-group">
                         <label for="">Họ tên</label>  
-                        <input class="form-control" type="text" name="name" /> 
+                        <input class="form-control" type="text" name="name" value="<?=$user['name'] ?>" />
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>  
-                        <input class="form-control" type="email" name="email" /> 
+                        <input class="form-control" type="email" name="email" value="<?=$user['email'] ?>" />
                     </div>
                     <div class="form-group">
                         <label for="">Địa chỉ</label>  
-                        <textarea class="form-control" name="addredd" > </textarea>
+                        <textarea class="form-control" name="address" ><?=$user['address']?> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Sinh nhật</label>  
-                        <input class="form-control" type="date" name="birthday" /> 
+                        <input class="form-control" type="date" value="<?=$user['date'] ?>" name="birthday" />
                     </div>
                     <div class="form-group">
                         <label for="">Giới tính</label>  
-                        <input class="" type="radio" name="gender"  value="1"/> Nam
-                        <input class="" type="radio" name="gender"  value="0"/> Nữ
+                        <input class="" type="radio" name="gender" <?=$user['gender'] ==1 ? 'checked' : '' ?>  value="1"/> Nam
+                        <input class="" type="radio" name="gender" <?=$user['gender'] ==0 ? 'checked' : '' ?> value="0"/> Nữ
                     </div>
                     <div class="form-group">
-                       <button class="btn-create">Cập nhật</button>
+                       <button type="submit" name="update" class="btn-create">Cập nhật</button>
                     </div>
                 </form>
             </div>

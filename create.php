@@ -17,13 +17,13 @@
     <div class="container">
         <h1>Thêm mới người dùng</h1>
         <div>
-            <a class="add-btn" href="/index.html">Danh sách</a>
+            <a class="add-btn" href="./index.php">Danh sách</a>
         </div>
 
 
 
             <div class="content">
-                <form class="createForm" method="post" action="">
+                <form class="createForm" method="post" action="./store.php">
                     <div class="form-group">
                         <label for="">Họ tên</label>  
                         <input class="form-control" type="text" name="name" /> 
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Địa chỉ</label>  
-                        <textarea class="form-control" name="addredd" > </textarea>
+                        <textarea class="form-control" name="address" > </textarea>
                     </div>
                     <div class="form-group">
                         <label for="">Sinh nhật</label>  
@@ -46,7 +46,7 @@
                         <input class="" type="radio" name="gender"  value="0"/> Nữ
                     </div>
                     <div class="form-group">
-                       <button class="btn-create">Thêm mới</button>
+                       <button name="create" class="btn-create">Thêm mới</button>
                     </div>
                 </form>
             </div>
